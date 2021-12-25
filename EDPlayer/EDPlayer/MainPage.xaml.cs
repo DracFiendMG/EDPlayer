@@ -68,14 +68,26 @@ namespace EDPlayer
                 List<ResponseModel> faceDetails = JsonConvert.DeserializeObject<List<ResponseModel>>(contentString);
                 if (faceDetails.Count != 0)
                 {
-                    lblHappiness.Text = "Happiness : " + faceDetails[0].faceAttributes.emotion.happiness;
-                    lblSadness.Text = "Sadness : " + faceDetails[0].faceAttributes.emotion.sadness;
-                    lblAnger.Text = "Anger : " + faceDetails[0].faceAttributes.emotion.anger;
-                    lblFear.Text = "Fear : " + faceDetails[0].faceAttributes.emotion.fear;
-                    lblNeutral.Text = "Neutral : " + faceDetails[0].faceAttributes.emotion.neutral;
-                    lblSurprise.Text = "Surprise : " + faceDetails[0].faceAttributes.emotion.surprise;
-                    lblDisgust.Text = "Disgust : " + faceDetails[0].faceAttributes.emotion.disgust;
-                    lblContempt.Text = "Contempt : " + faceDetails[0].faceAttributes.emotion.contempt;
+                    double Happiness = faceDetails[0].faceAttributes.emotion.happiness;
+                    double Sadness = faceDetails[0].faceAttributes.emotion.sadness;
+                    double Anger = faceDetails[0].faceAttributes.emotion.anger;
+                    double Fear = faceDetails[0].faceAttributes.emotion.fear;
+                    double Neutral = faceDetails[0].faceAttributes.emotion.neutral;
+                    double Surprise = faceDetails[0].faceAttributes.emotion.surprise;
+                    double Disgust = faceDetails[0].faceAttributes.emotion.disgust;
+                    double Contempt = faceDetails[0].faceAttributes.emotion.contempt;
+
+                    double Highest = Happiness;
+                    string HighestMood = "Happiness";
+                    if (Highest < Sadness) { Highest = Sadness; HighestMood = "Sadness"; }
+                    if (Highest < Anger) { Highest = Anger; HighestMood = "Anger"; }
+                    if (Highest < Fear) { Highest = Fear; HighestMood = "Fear"; }
+                    if (Highest < Neutral) { Highest = Neutral; HighestMood = "Neutral"; }
+                    if (Highest < Surprise) { Highest = Surprise; HighestMood = "Surprise"; }
+                    if (Highest < Disgust) { Highest = Disgust; HighestMood = "Disgust"; }
+                    if (Highest < Contempt) { Highest = Contempt; HighestMood = "Contempt"; }
+
+                    lblMood.Text = "You are feeling : " + HighestMood;     
                 }
 
             }
