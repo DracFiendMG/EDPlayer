@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EDPlayer.MainPage">
+
+    <StackLayout>
+        <StackLayout BackgroundColor="Black">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Image x:Name="imgBanner" Source="banner.png" ></Image>
+                <Image Margin="0,0,0,10" x:Name="imgEmail" HeightRequest="100" Source="cognitiveservice.png" ></Image>
+                <Label Margin="0,0,0,10" Text="Mood Detection" FontAttributes="Bold" FontSize="Large" TextColor="Gray" HorizontalTextAlignment="Center" ></Label>
+                <Image Margin="0,0,0,10" x:Name="imgSelected" HeightRequest="150" Source="defaultimage.png" ></Image>
+                <Button x:Name="btnPick" Text="Select" Clicked="btnPick_Clicked" />
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="10,0,0,10">
+                    <Label x:Name="lblHappiness" TextColor="white"></Label>
+                    <Label x:Name="lblAnger" TextColor="white"></Label>
+                    <Label x:Name="lblFear" TextColor="white"></Label>
+                    <Label x:Name="lblNeutral" TextColor="white"></Label>
+                    <Label x:Name="lblSadness" TextColor="white"></Label>
+                    <Label x:Name="lblSurprise" TextColor="white"></Label>
+                    <Label x:Name="lblDisgust" TextColor="white"></Label>
+                    <Label x:Name="lblContempt" TextColor="white"></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
